@@ -40,5 +40,9 @@ export const authOptions: AuthOptions = {
       session.user = token as any;
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      // Always redirect back to the home page after login
+      return baseUrl; // This redirects to "/"
+    },
   },
 };
