@@ -24,13 +24,15 @@ export default async function TopMenu() {
 
       <div className="flex-row flex items-center space-x-[24px]">
         <TopMenuItem title="Booking" pageRef="/booking"></TopMenuItem>
-        <Image
-          src={"/img/logo_lime.png"}
-          alt="logo"
-          className="h-[80px] w-[80px]"
-          width={100}
-          height={100}
-        />
+        <Link href="/">
+          <Image
+            src={"/img/logo_lime.png"}
+            alt="logo"
+            className="h-[80px] w-[80px]"
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
     </div>
   );
