@@ -1,6 +1,6 @@
 import CardPanel from "@/components/CardPanel";
 import HospitalCatalog from "@/components/HospitalCatalog";
-import { HospitalJson, HospitalItem } from "baseApp/interface";
+import { HospitalJson, HospitalItem } from "@/interface";
 import getHospitals from "@/libs/getHospitals";
 import { Suspense } from "react";
 import { LinearProgress } from "@mui/material";
