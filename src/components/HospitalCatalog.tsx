@@ -1,4 +1,4 @@
-import { HospitalJson, HospitalItem } from "baseApp/interface";
+import { HospitalJson, HospitalItem } from "@/interface";
 import Card from "./Card";
 import Link from "next/link";
 
