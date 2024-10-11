@@ -42,7 +42,7 @@ export default function Card({
           <Rating
             className="px-[16px] "
             name={rateName}
-            value={rateValue}
+            value={rateValue == undefined ? 0 : rateValue}
             id={rateName}
             data-testid={rateName}
             onChange={(e, rateValue) => {
