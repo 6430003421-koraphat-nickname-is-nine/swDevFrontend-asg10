@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import styles from "./banner.module.css";
 import Image from "next/image";
 import { Button } from "@mui/material";
+import { useSession } from "next-auth/react";
 
 export default function Banner() {
   const router = useRouter();
@@ -16,19 +17,7 @@ export default function Banner() {
     "/img/cover4.jpg",
   ];
   const [index, setIndex] = useState(0);
-  /*.bannerText {
-  position: relative;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 160px;
-  padding-right: 160px;
-  top: 80px;
-  z-index: 30;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.5);
-
-} */
+  const { data: session } = useSession();
   return (
     <div
       className="block p-[8px] m-[0px] w-[100vw] h-[640px] relative overflow-hidden rounded-[24px]"
@@ -45,7 +34,12 @@ export default function Banner() {
         objectFit="cover"
       />
       {/* <div className={styles.bannerText}> */}
-      <div className="relative px-16 py-160 z-30 text-center bg-lime-900/90 text-white top-[80px]">
+      {session ? (
+        <div className="px-[24px] py-[16px] z-30 absolute top-8 right-16 font-medium font-serif text-lime-900 text-4xl bg-lime-300 border-2 border-solid border-lime-950 rounded-[24px]">
+          Welcome {session.user?.name}
+        </div>
+      ) : null}
+      <div className="relative px-16 py-160 z-30 text-center bg-lime-900/90 text-white top-[112px]">
         <h1 className="text-4xl pb-5 font-bold">Vaccine Service Center</h1>
         <p className="text-xl">
           We're pleased to announce that vaccination appointments are now
